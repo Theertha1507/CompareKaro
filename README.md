@@ -2,6 +2,9 @@
 
 A grocery price comparison platform that helps users find the best deals across **Zepto** and **Blinkit** — two of India's leading 10-minute delivery platforms.
 
+## 🌐 Live Demo
+[https://comparekaro-frontend.onrender.com](https://comparekaro-frontend.onrender.com)
+
 ## 🔍 Features
 - Search 3,400+ grocery products by name or category
 - Side-by-side price comparison across Zepto and Blinkit
