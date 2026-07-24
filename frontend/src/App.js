@@ -9,19 +9,19 @@ const globalStyle = `
   body { background: #f5efe0; font-family: 'DM Mono', monospace; }
 `;
 
+const API = "https://comparekaro-backend.onrender.com";
+
 export default function App() {
   const [token, setToken] = useState(localStorage.getItem("ck_token") || "");
   const [username, setUsername] = useState(localStorage.getItem("ck_user") || "");
   const [page, setPage] = useState(token ? "search" : "login");
 
-  // auth state
   const [authUsername, setAuthUsername] = useState("");
   const [authPassword, setAuthPassword] = useState("");
   const [authEmail, setAuthEmail] = useState("");
   const [authError, setAuthError] = useState("");
   const [authMode, setAuthMode] = useState("login");
 
-  // search state
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -29,7 +29,7 @@ export default function App() {
 
   const handleAuth = async () => {
     setAuthError("");
-    const url = `http://localhost:8080/api/auth/${authMode}`;
+    const url = `${API}/api/auth/${authMode}`;
     const body = authMode === "register"
       ? { username: authUsername, password: authPassword, email: authEmail }
       : { username: authUsername, password: authPassword };
@@ -67,7 +67,7 @@ export default function App() {
     if (!query.trim()) return;
     setLoading(true);
     setSearched(true);
-    const res = await fetch(`http://localhost:8080/api/products/search?name=${query}`, {
+    const res = await fetch(`${API}/api/products/search?name=${query}`, {
       headers: { Authorization: `Bearer ${token}` }
     });
     const data = await res.json();
