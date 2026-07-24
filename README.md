@@ -70,19 +70,21 @@ App runs on `http://localhost:3000`
 4. Seeded 3,421 matched products into H2 database via `products.json`
 
 ## 🗂️ Project Structure
+```
 CompareKaro/
-├── comparekaro/ # Spring Boot backend
-│ └── src/main/java/com/comparekaro/comparekaro/
-│ ├── controller/ # REST controllers
-│ ├── model/ # JPA entities
-│ ├── repository/ # Spring Data repositories
-│ ├── service/ # Business logic + JWT
-│ └── security/ # JWT filter + Security config
-├── frontend/ # React frontend
-│ └── src/
-│ └── App.js
-├── seed.py # Data cleaning + seeding script
-└── data/ # Raw datasets (not tracked in git)
+├── comparekaro/          # Spring Boot backend
+│   └── src/main/java/com/comparekaro/comparekaro/
+│       ├── controller/   # REST controllers
+│       ├── model/        # JPA entities
+│       ├── repository/   # Spring Data repositories
+│       ├── service/      # Business logic + JWT
+│       └── security/     # JWT filter + Security config
+├── frontend/             # React frontend
+│   └── src/
+│       └── App.js
+├── seed.py               # Data cleaning + seeding script
+└── data/                 # Raw datasets (not tracked in git)
+```
 ## 🔮 Planned Improvements
 - MongoDB for persistent storage
 - Redis caching for faster search
